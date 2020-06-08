@@ -19,6 +19,9 @@ const LikeSection = props => {
         <div className="like-section-wrapper">
           <FontAwesomeIcon icon={faComment} />
         </div>
+        <div className="like-section-wrapper2">
+          {props.post.timestamp}
+        </div>
       </div>
       <p className="like-number">{props.likeCount} likes</p>
     </div>
