@@ -14,13 +14,13 @@ const CommentSection = props => {
       username: 'DanKim520',
       text: comment
     });
+    alterComment('');
   }
   
   const changeComment = (e) => {
     alterComment(e.target.value);
+
   }
-
-
 
 
   return (
