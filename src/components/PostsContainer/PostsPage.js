@@ -17,7 +17,7 @@ const PostsPage = (props) => {
       {/* {data.map(obj => <Post post={obj} />)} */}
       {data.filter(obj => {
         if (props.searchState === null) return obj;
-        else if (obj.username.includes(props.searchState)) return obj;
+        else if (obj.username.toLowerCase().includes(props.searchState.toLowerCase())) return obj;
       }).map(obj => <Post post={obj} />)}
     </div>
   );
