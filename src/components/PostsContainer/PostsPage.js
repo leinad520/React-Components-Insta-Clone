@@ -6,7 +6,7 @@ import "./Posts.css";
 // import data 
 import dummyData from "../../dummy-data";
 
-const PostsPage = () => {
+const PostsPage = (props) => {
   // set up state for your data
   const [data, setData] = useState(dummyData);
 
@@ -14,7 +14,11 @@ const PostsPage = () => {
   /* map through data here to return a Post and pass data as props to Post */
   return (
     <div className="posts-container-wrapper">
-      {data.map(obj => <Post post={obj} />)}
+      {/* {data.map(obj => <Post post={obj} />)} */}
+      {data.filter(obj => {
+        if (props.searchState === null) return obj;
+        else if (obj.username.includes(props.searchState)) return obj;
+      }).map(obj => <Post post={obj} />)}
     </div>
   );
 };
